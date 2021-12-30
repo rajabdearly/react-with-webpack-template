@@ -1,6 +1,39 @@
 .content {
+    margin: 10px auto;
+    padding: 2rem;
     width: 400px;
     height: 500px;
-    background-color: bisque;
+    background-color: rgb(190, 253, 165);
     border-radius: 0.5rem;
+    font-family: monospace;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.label {
+    font-size: 2rem;
+}
+
+.btn {
+    background-color: rgb(255, 121, 121);
+    border-radius: 0.5rem;
+    opacity: 0.8;
+	color: inherit;
+	border: none;
+	padding: 0.5rem;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    transition: 0.4s;
+    font-size: 1.5rem;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0;
 }
