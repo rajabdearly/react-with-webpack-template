@@ -9,11 +9,10 @@ const production = process.env.NODE_ENV === 'production';
 
 
 module.exports = {
-    entry: path.resolve(__dirname, "./src/index.js"),
+    entry: { myAppName: path.resolve(__dirname, "./src/index.js") },
     output: {
         path: path.resolve(__dirname, "./dist"),
         filename: production ? '[name].[contenthash].js' : '[name].js',
-        chunkFilename: production ? '[name].[contenthash].js' : '[name].js',
     },
     module: {
         rules: [
