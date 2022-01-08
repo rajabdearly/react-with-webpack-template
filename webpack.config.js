@@ -2,7 +2,6 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const production = process.env.NODE_ENV === 'production';
@@ -58,17 +57,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: production ? '[name].[contenthash].css' : '[name].css',
         }),
-        new WebpackManifestPlugin(),
-        new webpack.DefinePlugin({
-            SERVICE_URL: JSON.stringify('https://dev.example.com'),
-        })
     ],
     devServer: {
         port: 3001,
         hot: true,
-    },
-    externals: {
-        'React': 'react',
     },
     mode: production ? 'production' : 'development'
 };

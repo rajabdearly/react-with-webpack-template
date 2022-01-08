@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
-if (module && module.hot) {
+const devMode = process.env.NODE_ENV === 'development';
+if (devMode && module && module.hot) {
     module.hot.accept();
 }
